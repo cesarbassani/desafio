@@ -1,4 +1,4 @@
-package br.com.azi.app.repository.database;
+package br.com.azi.app.licitacao.repositories.database;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;

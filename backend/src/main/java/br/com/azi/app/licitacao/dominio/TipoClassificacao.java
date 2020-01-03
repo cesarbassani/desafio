@@ -1,4 +1,4 @@
-package br.com.azi.app.model;
+package br.com.azi.app.licitacao.dominio;
 
 public enum TipoClassificacao {
 

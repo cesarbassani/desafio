@@ -1,7 +1,7 @@
-package br.com.azi.app.resource;
+package br.com.azi.app.licitacao.resources;
 
-import br.com.azi.app.model.Proposta;
-import br.com.azi.app.repository.PropostaRepository;
+import br.com.azi.app.licitacao.dominio.Proposta;
+import br.com.azi.app.licitacao.repositories.PropostaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

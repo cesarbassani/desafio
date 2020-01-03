@@ -1,17 +1,20 @@
-package br.com.azi.app.model;
+package br.com.azi.app.licitacao.dominio;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
 @Data
 @NoArgsConstructor
-public class Proposta {
+public class Proposta implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,5 +35,6 @@ public class Proposta {
     private Integer classificacao;
 
     @ManyToOne
+    @JoinColumn(name="licitacao_id")
     private Licitacao licitacao;
 }

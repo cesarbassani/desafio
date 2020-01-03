@@ -1,18 +1,20 @@
-package br.com.azi.app.model;
+package br.com.azi.app.licitacao.dominio;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
-public class Licitacao {
+public class Licitacao implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +24,9 @@ public class Licitacao {
 
     private Integer tipo;
 
-    @JsonIgnoreProperties("licitacao")
     @Valid
-    @NotEmpty
-    @OneToMany(mappedBy = "licitacao", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    @OneToMany(mappedBy = "licitacao")
     private List<Proposta> propostas;
 
     public Licitacao(String descricao, TipoClassificacao tipo, List<Proposta> propostas) {
