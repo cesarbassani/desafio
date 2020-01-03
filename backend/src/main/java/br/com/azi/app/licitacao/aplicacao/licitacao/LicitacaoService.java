@@ -21,4 +21,8 @@ public class LicitacaoService {
     public Optional<Licitacao> getLicitacaoById(Long id) {
         return licitacaoRepository.findById(id);
     }
+
+    public Licitacao insert(Licitacao licitacao) {
+        return licitacaoRepository.save(licitacao);
+    }
 }

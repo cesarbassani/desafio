@@ -21,4 +21,8 @@ public class PropostaService {
     public Optional<Proposta> getPropostaById(Long id) {
         return propostaRepository.findById(id);
     }
+
+    public Proposta insert(Proposta proposta) {
+        return propostaRepository.save(proposta);
+    }
 }

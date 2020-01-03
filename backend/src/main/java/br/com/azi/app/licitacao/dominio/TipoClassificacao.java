@@ -2,7 +2,7 @@ package br.com.azi.app.licitacao.dominio;
 
 public enum TipoClassificacao {
 
-    MenorPreco(1, "Menor Preço"),
+    MENORPRECO(1, "Menor Preço"),
     NOTAPRECO(2, "Nota Preço");
 
     private int codigo;
