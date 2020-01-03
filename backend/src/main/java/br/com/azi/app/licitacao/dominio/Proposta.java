@@ -2,6 +2,7 @@ package br.com.azi.app.licitacao.dominio;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,18 +21,15 @@ public class Proposta implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     private String fornecedor;
 
-    @NotNull
     private BigDecimal nota;
 
-    @NotNull
     private BigDecimal preco;
 
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataCadastro;
 
-    @NotNull
     private Integer classificacao;
 
     @ManyToOne
